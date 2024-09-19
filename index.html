@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>belajar vue</title>
+  </head>
+  <body>
+    <div id="app">
+      {{message}}
+      <h1>belajar vue</h1>
+      <p v-text="pragraf">v-text bisa ditimpa</p>
+      <p>{{pragraf}}</p>
+      <p>{{tipenumber}}</p>
+      <p v-html="pragraf2">ini adalah timpa pragraf 2 bisa dikasih text btml</p>
+    </div>
+
+    <!-- pengkondisian -->
+    <div id="pengkondisian">
+      <span v-if="tampil">{{message}}</span>
+      <span v-else>data else {{pragraf2}}</span>
+
+      <div>
+        <p v-if="tipenumber > 10">anda mendapatkan nilai 10</p>
+        <p v-else-if="tipenumber > 5 && tipenumber <= 10">
+          anda mendapatkan nilai 5
+        </p>
+        <p v-else>anda tidak lulus</p>
+      </div>
+
+      <!-- penggunaan v-shwo -->
+      <div>
+        <p v-show="stateLampu">lampu nyala</p>
+        <button @click="tooglelampu">toggle lampu</button>
+      </div>
+    </div>
+
+    <!-- penggulangan -->
+    <h2>pengulangan</h2>
+    <div id="penggulangan">
+      <span v-for="item in 10">{{item}}</span>
+      <ul v-for="(whatEver,index) in makanans">
+        <li>
+          {{whatEver}} -- {{index}}
+          <button @click="makanans.splice(index,1)">x</button>
+        </li>
+      </ul>
+      <h4>players</h4>
+      <ul v-for="(player,index) in players">
+        <li>{{player.name}} -- {{player.score}} -- {{index}}</li>
+      </ul>
+    </div>
+
+    <!-- event handler -->
+    <h4>event handler</h4>
+    <div id="event-handler">
+      <button @click="minus()">-</button>
+      <span>{{tipenumber}}</span>
+      <button @click="plus()">+</button>
+      <form action="post" action="belajar2.html" @submit.prevent>
+        <input type="text" />
+        <input type="submit" value="send" />
+      </form>
+      <h5>binding</h5>
+      <a :href="URL">halaman 2 </a>
+    </div>
+
+   
+  </body>
+
+  <script type="module">
+    import {
+      createApp,
+      ref,
+    } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+
+    // event handler
+    createApp({
+      data() {
+        return {
+          tipenumber: 0,
+          URL:"belajar2.html"
+        };
+      },
+      methods: {
+        minus() {
+          this.tipenumber-=2;
+        },
+        plus() {
+          this.tipenumber++;
+        },
+      },
+    }).mount("#event-handler"),
+      // pengulangan
+      createApp({
+        data() {
+          return {
+            makanans: ["bakso", "soto", "nasi", "mie", "sate"],
+            players: [
+              { name: "samsudin", score: 100 },
+              { name: "yudhie", score: 90 },
+              { name: "ronaldo", score: 100 },
+              { name: "messi", score: 90 },
+            ],
+          };
+        },
+      }).mount("#penggulangan"),
+      createApp({
+        setup() {
+          return {
+            message: "hello vue",
+            pragraf: "<strong>ini paragraf tidak bisa tag html</strong>",
+            tipenumber: 10,
+            pragraf2: "<strong>lorem ipsum bisa dikasih tag html</ipsumstrong>",
+          };
+        },
+      }).mount("#app"),
+      createApp({
+        data() {
+          return {
+            message: "pengkondisian",
+            tampil: false,
+            tipenumber: 7,
+            pragraf2: "<strong>lorem ipsum bisa dikasih tag html</ipsumstrong>",
+            stateLampu: true,
+          };
+        },
+        methods: {
+          tooglelampu() {
+            this.stateLampu = !this.stateLampu;
+          },
+        },
+      }).mount("#pengkondisian");
+  </script>
+</html>
