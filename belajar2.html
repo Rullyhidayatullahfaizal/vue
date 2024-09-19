@@ -64,12 +64,43 @@
             <p>role:{{role}}</p>
         </div>
      </div>
+
+     <!-- computed properties -->
+      <div id="computed">
+        <form action="">
+            <input type="text" placeholder="first Name" v-model="firstName">
+            <input type="text" placeholder="Middle Name" v-model="middleName">
+            <input type="text" placeholder="full Name" v-model="lastName">            
+        </form>
+
+        <div>
+            fullName : {{fullName}}
+        </div>
+        <div>
+            fullNamekedua:{{fullName}}
+        </div>
+      </div>
 </body>
 <script type="module">
     import {
       createApp,
       ref,
     } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+
+    createApp({
+        data() {
+            return {
+                firstName:"",
+                middleName:"",
+                lastName:"" 
+            }
+        },
+        computed:{
+            fullName(){
+                return this.firstName + " " + this.middleName + " " + this.lastName
+            }  
+        }
+    }).mount("#computed"),
 
     createApp({
         data() {
