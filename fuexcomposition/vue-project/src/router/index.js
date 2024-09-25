@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import CompositionView from '../views/CompositionView.vue'
 import WatchView from '../views/WatchView.vue'
 import ParsingView from '../views/ParsingView.vue'
+import ApolloView from '../views/apolloView.vue'
+
 
 
 const router = createRouter({
@@ -20,14 +22,13 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
-    }
-    ,
+    },
     {
       path: '/composition',
       name: 'composition',
       component: CompositionView
-    }
-    ,{
+    },
+    {
       path: '/watch',
       name: 'watch',
       component: WatchView
@@ -37,7 +38,11 @@ const router = createRouter({
       name: 'parsing',
       component: ParsingView
     },
-    
+    {
+      path: '/apollo',
+      name: 'apollo',
+      component: ApolloView
+    }
   ]
 })
 

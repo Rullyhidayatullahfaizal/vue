@@ -17,6 +17,8 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/composition">Composition</RouterLink>
         <RouterLink to="/watch">watch effec</RouterLink>
         <RouterLink to="/parsing">parsing view</RouterLink>
+        <RouterLink to="/apollo">apollo agrap ql</RouterLink>
+
 
       </nav>
   </header>
