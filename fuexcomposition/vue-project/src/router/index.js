@@ -4,6 +4,11 @@ import CompositionView from '../views/CompositionView.vue'
 import WatchView from '../views/WatchView.vue'
 import ParsingView from '../views/ParsingView.vue'
 import ApolloView from '../views/apolloView.vue'
+import MultipleVmodel from '../views/MultipleViewModel.vue'
+import DynamicView from '../views/DynamicView.vue'
+import DynamicDetailView from '../views/DetailListView.vue'
+
+
 
 
 
@@ -42,6 +47,23 @@ const router = createRouter({
       path: '/apollo',
       name: 'apollo',
       component: ApolloView
+    },
+    {
+      path: '/multipleVmodel',
+      name: 'multipleVmodel',
+      component: MultipleVmodel
+    },
+    {
+      path:'/dynamiroute',
+      name: 'dynamiroute',
+      component:DynamicView
+      
+    },
+    {
+      path:'/dynamiroutes/:id',
+      name: 'dynamiroutes',
+      component:DynamicDetailView
+      
     }
   ]
 })

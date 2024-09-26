@@ -18,7 +18,8 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/watch">watch effec</RouterLink>
         <RouterLink to="/parsing">parsing view</RouterLink>
         <RouterLink to="/apollo">apollo agrap ql</RouterLink>
-
+        <RouterLink to="/multipleVmodel">Multiple v-Model</RouterLink>
+        <RouterLink to="/dynamiroute">Dynamic Route</RouterLink>
 
       </nav>
   </header>
