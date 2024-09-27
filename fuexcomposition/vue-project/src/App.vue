@@ -20,6 +20,8 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/apollo">apollo agrap ql</RouterLink>
         <RouterLink to="/multipleVmodel">Multiple v-Model</RouterLink>
         <RouterLink to="/dynamiroute">Dynamic Route</RouterLink>
+        <RouterLink to="/vuex">Vuex</RouterLink>
+
 
       </nav>
   </header>

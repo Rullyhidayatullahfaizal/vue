@@ -7,7 +7,8 @@ import ApolloView from '../views/apolloView.vue'
 import MultipleVmodel from '../views/MultipleViewModel.vue'
 import DynamicView from '../views/DynamicView.vue'
 import DynamicDetailView from '../views/DetailListView.vue'
-
+import VuexView from '../views/VuexView.vue'
+import LoginView from '../components/layouts/loginViw.vue'
 
 
 
@@ -64,7 +65,18 @@ const router = createRouter({
       name: 'dynamiroutes',
       component:DynamicDetailView
       
-    }
+    },{
+      path:'/vuex',
+      name: 'vuex',
+      component:VuexView
+      
+    },
+    {
+      path:'/login',
+      name: 'login',
+      component:LoginView
+      
+    },
   ]
 })
 
