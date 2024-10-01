@@ -45,44 +45,49 @@
 
       <!-- content main page -->
       <v-main style="height: auto">
-    <MenuList class="mt-5"></MenuList>
-    <div class="d-flex mt-5">
-      <!-- Kolom pertama untuk StepperList -->
-      <div style="width: 30%;">
-        <StepperList />
-        <v-divider :thickness="12" color="info" style="width: 100%"></v-divider>
-        <StepperList />
-      </div>
+        <MenuList class="mt-5"></MenuList>
+        <div class="d-flex mt-5">
+          <!-- Kolom pertama untuk StepperList -->
+          <div style="width: 30%">
+            <StepperList />
+            <v-divider
+              :thickness="12"
+              color="info"
+              style="width: 100%"
+            ></v-divider>
+            <StepperList />
+          </div>
 
-      <!-- Kolom kedua untuk NotesList menggunakan Grid Vuetify -->
-      <v-container fluid style="width: 70%;">
-        <v-row>
-          <!-- Mengatur NotesList agar setiap elemen mengambil 1/3 kolom pada layar sedang ke atas -->
-          <v-col cols="12" sm="6" md="4">
-            <NotesList />
-          </v-col>
-          <v-col cols="12" sm="6" md="4">
-            <NotesList />
-          </v-col>
-          <v-col cols="12" sm="6" md="4">
-            <NotesList />
-          </v-col>
-          <v-col cols="12" sm="6" md="4">
-            <NotesList />
-          </v-col>
-          <v-col cols="12" sm="6" md="4">
-            <NotesList />
-          </v-col>
-          <v-col cols="12" sm="6" md="4">
-            <NotesList />
-          </v-col>
-          <v-col cols="12" sm="6" md="4">
-            <NotesList />
-          </v-col>
-        </v-row>
-      </v-container>
-    </div>
-  </v-main>
+          <!-- Kolom kedua untuk NotesList menggunakan Grid Vuetify -->
+          <v-container fluid style="width: 70%">
+            <v-row>
+              <!-- Mengatur NotesList agar setiap elemen mengambil 1/3 kolom pada layar sedang ke atas -->
+              <v-col cols="12" sm="6" md="4">
+                <NotesList />
+              </v-col>
+              <v-col cols="12" sm="6" md="4">
+                <NotesList />
+              </v-col>
+              <v-col cols="12" sm="6" md="4">
+                <NotesList />
+              </v-col>
+              <v-col cols="12" sm="6" md="4">
+                <NotesList />
+              </v-col>
+              <v-col cols="12" sm="6" md="4">
+                <NotesList />
+              </v-col>
+              <v-col cols="12" sm="6" md="4">
+                <NotesList />
+              </v-col>
+            </v-row>
+          </v-container>
+        </div>
+        <div>
+        <MyEditor/>
+      </div>
+      </v-main>
+      
     </v-layout>
   </v-card>
 </template>
@@ -92,6 +97,8 @@ import { ref } from "vue";
 import MenuList from "../components/MenuList.vue";
 import StepperList from "@/components/StepperList.vue";
 import NotesList from "@/components/NotesList.vue";
+import MyEditor from "@/components/MyEditor.vue";
+
 const drawer = ref(true);
 const rail = ref(true);
 </script>
